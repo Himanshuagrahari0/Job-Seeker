@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employers - Post Jobs & Find Talent | Job Seeker </title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="employers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                   <div class="logo">
+                    <img src="C:\Job Seeker\JobSeekerLogoHi.png" width="200px" height="120px" alt="Logo image" >  
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li class="nav-item"><a href="company-review.html">Company Review</a></li>
+                    <li class="nav-item"><a href="salary-guide.html">Salary Guide</a></li>
+                    <li class="nav-item"><a href="employers.html" class="active">Employers/Post Job</a></li>
+                    <li class="nav-item"><a href="about.html">About</a></li>
+                    <li class="nav-item"><a href="login.html" class="btn-login">Login</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Employers Hero -->
+    <section class="employers-hero">
+        <div class="container">
+            <div class="employers-header">
+                <h1>Find Your Next Great Hire</h1>
+                <p>Connect with qualified candidates, post jobs, and manage your hiring process all in one place.</p>
+                <div class="hero-actions">
+                    <a href="#post-job" class="btn-primary">Post a Job <i class="fas fa-plus"></i></a>
+                    <a href="#pricing" class="btn-secondary">View Plans <i class="fas fa-crown"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employer Benefits -->
+    <section class="employer-benefits">
+        <div class="container">
+            <h2 class="section-title">Why Job Seeker for Employers?</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Access to Top Talent</h3>
+                    <p>Reach over 1 million active job Seekers with diverse skills and experience levels.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Targeted Matching</h3>
+                    <p>Our AI-powered matching connects you with candidates who fit your requirements.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Easy Hiring Dashboard</h3>
+                    <p>Manage applications, schedule interviews, and track candidates in one intuitive dashboard.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Analytics & Insights</h3>
+                    <p>Get detailed analytics on your job posts and candidate engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Job Form -->
+    <section id="post-job" class="post-job">
+        <div class="container">
+            <h2 class="section-title">Post a Job Opening</h2>
+            <p class="section-subtitle">Fill out the form below to post your job. Reach thousands of qualified candidates.</p>
+            
+            <div class="job-form-container">
+                <form id="jobPostForm">
+                    <div class="form-section">
+                        <h3><i class="fas fa-info-circle"></i> Job Details</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="jobTitle"><i class="fas fa-briefcase"></i> Job Title</label>
+                                <input type="text" id="jobTitle" placeholder="e.g., Senior Software Engineer" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="jobType"><i class="fas fa-clock"></i> Job Type </label>
+                                <select id="jobType" required>
+                                    <option value="">Select job type</option>
+                                    <option value="fulltime">Full-time</option>
+                                    <option value="parttime">Part-time</option>
+                                    <option value="contract">Contract</option>
+                                    <option value="internship">Internship</option>
+                                    <option value="remote">Remote</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="jobLocation"><i class="fas fa-map-marker-alt"></i> Location </label>
+                                <input type="text" id="jobLocation" placeholder="e.g., New Delhi, India or Remote" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="jobSalary"><i class="fas fa-rupee-sign"></i> Salary Range</label>
+                                <input type="text" id="jobSalary" placeholder="e.g., ₹90,000 - ₹120,000">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="jobDescription"><i class="fas fa-file-alt"></i> Job Description </label>
+                            <textarea id="jobDescription" rows="6" placeholder="Describe the role, responsibilities, and requirements..." required></textarea>
+                            <div class="char-count">Characters: <span id="charCount">0</span>/2000</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3><i class="fas fa-graduation-cap"></i> Requirements</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="experienceLevel"><i class="fas fa-chart-line"></i> Experience Level *</label>
+                                <select id="experienceLevel" required>
+                                    <option value="">Select experience</option>
+                                    <option value="entry">Entry Level (0-2 years)</option>
+                                    <option value="mid">Mid Level (3-5 years)</option>
+                                    <option value="senior">Senior (6-10 years)</option>
+                                    <option value="executive">Executive (10+ years)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="education"><i class="fas fa-university"></i> Education</label>
+                                <select id="education">
+                                    <option value="">Select education</option>
+                                    <option value="highschool">High School</option>
+                                    <option value="associate">Associate Degree</option>
+                                    <option value="bachelor">Bachelor's Degree</option>
+                                    <option value="master">Master's Degree</option>
+                                    <option value="phd">PhD</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="skills"><i class="fas fa-tools"></i> Required Skills</label>
+                            <input type="text" id="skills" placeholder="e.g., JavaScript, React, Python (comma separated)">
+                            <div class="skills-hint">Separate skills with commas</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3><i class="fas fa-building"></i> Company Information</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="companyName"><i class="fas fa-building"></i> Company Name *</label>
+                                <input type="text" id="companyName" placeholder="Your company name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="companyWebsite"><i class="fas fa-globe"></i> Website</label>
+                                <input type="url" id="companyWebsite" placeholder="https://">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="companyDescription"><i class="fas fa-info-circle"></i> About Your Company</label>
+                            <textarea id="companyDescription" rows="4" placeholder="Brief description of your company culture, mission, etc."></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3><i class="fas fa-cog"></i> Posting Options</h3>
+                        
+                        <div class="posting-options">
+                            <div class="option-group">
+                                <h4>Posting Duration</h4>
+                                <div class="radio-options">
+                                    <label>
+                                        <input type="radio" name="duration" value="30" checked>
+                                        <span class="radio-label">
+                                            <strong>30 Days</strong>
+                                            <span>Standard posting</span>
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="duration" value="60">
+                                        <span class="radio-label">
+                                            <strong>60 Days</strong>
+                                            <span>Extended visibility</span>
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="duration" value="90">
+                                        <span class="radio-label">
+                                            <strong>90 Days</strong>
+                                            <span>Maximum exposure</span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="option-group">
+                                <h4>Featured Options</h4>
+                                <div class="checkbox-options">
+                                    <label>
+                                        <input type="checkbox" id="featuredJob">
+                                        <span class="checkbox-label">
+                                            <strong>Featured Job</strong>
+                                            <span>Highlight your job at the top of search results</span>
+                                            <span class="price-tag">+ ₹599</span>
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="urgentHiring">
+                                        <span class="checkbox-label">
+                                            <strong>Urgent Hiring Badge</strong>
+                                            <span>Add "Urgent Hiring" badge to attract candidates quickly</span>
+                                            <span class="price-tag">+ ₹1149</span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <div class="form-preview">
+                            <button type="button" id="previewJob" class="btn-preview">
+                                <i class="fas fa-eye"></i> Preview Job Post
+                            </button>
+                            <p>Preview your job post before publishing</p>
+                        </div>
+                        
+                        <div class="form-submit">
+                            <div class="total-cost">
+                                <span>Total Cost:</span>
+                                <span class="cost-amount">₹1689</span>
+                            </div>
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-paper-plane"></i> Post Job Now
+                            </button>
+                            <p class="terms-notice">By posting, you agree to our <a href="#">Terms of Service</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section id="pricing" class="pricing-plans">
+        <div class="container">
+            <h2 class="section-title">Flexible Pricing Plans</h2>
+            <p class="section-subtitle">Choose the plan that fits your hiring needs</p>
+            
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3>Basic</h3>
+                        <div class="plan-price">
+                            <span class="amount">₹299</span>
+                            <span class="period">per job post</span>
+                        </div>
+                    </div>
+                    
+                    <div class="plan-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> 30-day job posting</li>
+                            <li><i class="fas fa-check"></i> Basic candidate management</li>
+                            <li><i class="fas fa-check"></i> Up to 100 applications</li>
+                            <li><i class="fas fa-check"></i> Standard visibility</li>
+                            <li><i class="fas fa-times"></i> No featured placement</li>
+                            <li><i class="fas fa-times"></i> No priority support</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#post-job" class="btn-plan">Get Started</a>
+                </div>
+                
+                <div class="plan-card featured">
+                    <div class="plan-badge">Most Popular</div>
+                    <div class="plan-header">
+                        <h3>Professional</h3>
+                        <div class="plan-price">
+                            <span class="amount">₹599</span>
+                            <span class="period">per job post</span>
+                        </div>
+                    </div>
+                    
+                    <div class="plan-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> 60-day job posting</li>
+                            <li><i class="fas fa-check"></i> Advanced candidate management</li>
+                            <li><i class="fas fa-check"></i> Unlimited applications</li>
+                            <li><i class="fas fa-check"></i> Featured placement for 7 days</li>
+                            <li><i class="fas fa-check"></i> Candidate screening tools</li>
+                            <li><i class="fas fa-check"></i> Priority email support</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#post-job" class="btn-plan featured-btn">Get Started</a>
+                </div>
+                
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3>Enterprise</h3>
+                        <div class="plan-price">
+                            <span class="amount">Custom</span>
+                            <span class="period">tailored to your needs</span>
+                        </div>
+                    </div>
+                    
+                    <div class="plan-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Unlimited job postings</li>
+                            <li><i class="fas fa-check"></i> Full recruitment platform</li>
+                            <li><i class="fas fa-check"></i> Advanced analytics & reporting</li>
+                            <li><i class="fas fa-check"></i> Dedicated account manager</li>
+                            <li><i class="fas fa-check"></i> API access</li>
+                            <li><i class="fas fa-check"></i> 24/7 phone support</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#" class="btn-plan">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employer Success Stories -->
+    <section class="success-stories">
+        <div class="container">
+            <h2 class="section-title">Trusted by Leading Companies</h2>
+            
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-content">
+                        <p>"Job Seeker  helped us fill 3 senior engineering positions in just 2 weeks. The quality of candidates was exceptional."</p>
+                    </div>
+                    <div class="story-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Michal Jackson</h4>
+                            <p>HR Director, Google</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-content">
+                        <p>"The hiring dashboard made it easy to manage over 200 applications for our marketing roles. Saved us countless hours."</p>
+                    </div>
+                    <div class="story-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Rahul Saxena</h4>
+                            <p>Recruitment Manager, Oracle</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3><i class="fas fa-search"></i> Job Seeker </h3>
+                    <p>Your gateway to finding the perfect job opportunity. We connect talented professionals with top employers worldwide.</p>
+                    <div class="social-icons">
+                        <a href="nothing"><i class="fab fa-facebook"></i></a>
+                        <a href="nothing"><i class="fab fa-twitter"></i></a>
+                        <a href="nothing"><i class="fab fa-linkedin"></i></a>
+                        <a href="nothing"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="company-review.html">Company Review</a></li>
+                        <li><a href="salary-guide.html">Salary Guide</a></li>
+                        <li><a href="employers.html">Employers/Post Job</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Employer Resources</h4>
+                    <ul>
+                        <li><a href="#">Hiring Guide</a></li>
+                        <li><a href="#">Recruitment Analytics</a></li>
+                        <li><a href="#">Employer Blog</a></li>
+                        <li><a href="#">Candidate Screening</a></li>
+                        <li><a href="#">Employer FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact Sales</h4>
+                    <p><i class="fas fa-phone"></i> +919651279072</p>
+                    <p><i class="fas fa-envelope"></i> prinshsinghsales@hotmail.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri, 10am-6pm </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Job Seeker . All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Job Preview Modal -->
+    <div id="jobPreviewModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Job Post Preview</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="previewContent">
+                <!-- Preview content will be inserted here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="closePreview">Close</button>
+                <button class="btn-primary" id="confirmPost">Post Job</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="employers.js"></script>
+</body>
+</html>

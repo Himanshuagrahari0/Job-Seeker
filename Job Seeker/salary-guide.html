@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Guide - Job Seeker </title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="salary-guide.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="C:\Job Seeker\JobSeekerLogoHi.png" width="200px" height="120px" alt="Logo image" >  
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li class="nav-item"><a href="company-review.html">Company Review</a></li>
+                    <li class="nav-item"><a href="salary-guide.html" class="active">Salary Guide</a></li>
+                    <li class="nav-item"><a href="employers.html">Employers/Post Job</a></li>
+                    <li class="nav-item"><a href="about.html">About</a></li>
+                    <li class="nav-item"><a href="login.html" class="btn-login">Login</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Salary Guide Hero -->
+    <section class="salary-hero">
+        <div class="container">
+            <div class="salary-header">
+                <h1>Salary Guide & Compensation Insights</h1>
+                <p>Discover market salaries for thousands of positions. Compare compensation across industries, locations, and experience levels.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Salary Calculator -->
+    <section class="salary-calculator">
+        <div class="container">
+            <div class="calculator-container">
+                <h2><i class="fas fa-calculator"></i> Salary Calculator</h2>
+                <p>Find out what you should be earning based on your role, experience, and location.</p>
+                
+                <div class="calculator-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="jobTitle"><i class="fas fa-briefcase"></i> Job Title</label>
+                            <input type="text" id="jobTitle" placeholder="e.g., Software Engineer" list="jobTitles">
+                            <datalist id="jobTitles">
+                                <option value="Software Engineer">
+                                <option value="Product Manager">
+                                <option value="Data Analyst">
+                                <option value="UX Designer">
+                                <option value="Marketing Manager">
+                                <option value="Sales Executive">
+                                <option value="Project Manager">
+                                <option value="DevOps Engineer">
+                            </datalist>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="experience"><i class="fas fa-chart-line"></i> Experience Level</label>
+                            <select id="experience">
+                                <option value="">Select experience</option>
+                                <option value="entry">Entry Level (0-2 years)</option>
+                                <option value="mid">Mid Level (3-5 years)</option>
+                                <option value="senior">Senior (6-10 years)</option>
+                                <option value="executive">Executive (10+ years)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="location"><i class="fas fa-map-marker-alt"></i> Location</label>
+                            <select id="location">
+                                <option value="">Select location</option>
+                                <option value="sf">Bhopal, India</option>
+                                <option value="ny">Delhi, India</option>
+                                <option value="seattle">Jaipur, India</option>
+                                <option value="austin">Bangluru, India</option>
+								<option value="austin">Mumbai, India</option>
+								<option value="austin">Chennai, India</option>
+                                <option value="remote">Remote</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="industry"><i class="fas fa-industry"></i> Industry</label>
+                            <select id="industry">
+                                <option value="">Select industry</option>
+                                <option value="tech">Technology</option>
+                                <option value="finance">Finance</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="retail">Retail/E-commerce</option>
+                                <option value="manufacturing">Manufacturing</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button id="calculateSalary" class="btn-calculate">
+                        <i class="fas fa-calculator"></i> Calculate Salary
+                    </button>
+                </div>
+                
+                <div class="calculator-results" id="salaryResults" style="display: none;">
+                    <div class="results-header">
+                        <h3>Estimated Salary Range</h3>
+                        <div class="salary-range">
+                            <span class="min-salary" id="minSalary"> 85,000</span>
+                            <span class="range-separator">-</span>
+                            <span class="max-salary" id="maxSalary"> 135,000</span>
+                            <span class="salary-period">per year</span>
+                        </div>
+                        <p class="salary-average">Average: <span id="avgSalary"> 110,000</span></p>
+                    </div>
+                    
+                    <div class="results-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Median Salary</span>
+                            <span class="detail-value" id="medianSalary"> 112,500</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">25th Percentile</span>
+                            <span class="detail-value" id="percentile25"> 95,000</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">75th Percentile</span>
+                            <span class="detail-value" id="percentile75"> 128,000</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Top 10% Earn</span>
+                            <span class="detail-value" id="top10percent"> 160,000+</span>
+                        </div>
+                    </div>
+                    
+                    <div class="results-actions">
+                        <button class="btn-save" id="saveCalculation">
+                            <i class="fas fa-save"></i> Save Calculation
+                        </button>
+                        <button class="btn-compare" id="compareSalaries">
+                            <i class="fas fa-balance-scale"></i> Compare with Other Roles
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Salary Trends -->
+    <section class="salary-trends">
+        <div class="container">
+            <h2 class="section-title">Salary Trends by Industry</h2>
+            <p class="section-subtitle">Explore how salaries compare across different sectors</p>
+            
+            <div class="trends-container">
+                <div class="trends-chart">
+                    <canvas id="salaryChart"></canvas>
+                </div>
+                
+                <div class="trends-data">
+                    <h3><i class="fas fa-chart-bar"></i> Highest Paying Industries</h3>
+                    <div class="industry-list">
+                        <div class="industry-item">
+                            <span class="industry-name">Technology</span>
+                            <div class="industry-bar">
+                                <div class="bar-fill" style="width: 95%;"></div>
+                            </div>
+                            <span class="industry-salary">1 Cr+</span>
+                        </div>
+                        
+                        <div class="industry-item">
+                            <span class="industry-name">Finance</span>
+                            <div class="industry-bar">
+                                <div class="bar-fill" style="width: 85%;"></div>
+                            </div>
+                            <span class="industry-salary">70 Lac+</span>
+                        </div>
+                        
+                        <div class="industry-item">
+                            <span class="industry-name">Healthcare</span>
+                            <div class="industry-bar">
+                                <div class="bar-fill" style="width: 78%;"></div>
+                            </div>
+                            <span class="industry-salary">65 Lac+</span>
+                        </div>
+                        
+                        <div class="industry-item">
+                            <span class="industry-name">Manufacturing</span>
+                            <div class="industry-bar">
+                                <div class="bar-fill" style="width: 72%;"></div>
+                            </div>
+                            <span class="industry-salary">79 Lac+</span>
+                        </div>
+                        
+                        <div class="industry-item">
+                            <span class="industry-name">Retail</span>
+                            <div class="industry-bar">
+                                <div class="bar-fill" style="width: 65%;"></div>
+                            </div>
+                            <span class="industry-salary">40 Lac+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Paying Jobs -->
+    <section class="top-jobs">
+        <div class="container">
+            <h2 class="section-title">Top Paying Jobs in 2023</h2>
+            
+            <div class="jobs-grid">
+                <div class="job-card">
+                    <div class="job-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Machine Learning Engineer</h3>
+                    <p class="job-desc">Develop and implement machine learning algorithms and models</p>
+                    <div class="job-salary"> 14,00000 -  32,00000</div>
+                    <div class="job-growth">
+                        <i class="fas fa-arrow-up"></i> 32% growth
+                    </div>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Architect</h3>
+                    <p class="job-desc">Design and manage cloud computing strategies and infrastructure</p>
+                    <div class="job-salary"> 13,00000 -  21,00000</div>
+                    <div class="job-growth">
+                        <i class="fas fa-arrow-up"></i> 28% growth
+                    </div>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity Analyst</h3>
+                    <p class="job-desc">Protect computer systems and networks from cyber threats</p>
+                    <div class="job-salary"> 13,00000 - 70,00000</div>
+                    <div class="job-growth">
+                        <i class="fas fa-arrow-up"></i> 35% growth
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Negotiation Tips -->
+    <section class="negotiation-tips">
+        <div class="container">
+            <h2 class="section-title">Salary Negotiation Tips</h2>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-number">1</div>
+                    <h3>Research Market Rates</h3>
+                    <p>Use salary data to know your worth before negotiations begin.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-number">2</div>
+                    <h3>Consider Total Compensation</h3>
+                    <p>Look beyond base salary to benefits, bonuses, and equity.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-number">3</div>
+                    <h3>Practice Your Pitch</h3>
+                    <p>Rehearse your talking points and be prepared to justify your ask.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <h3>Timing Matters</h3>
+                    <p>Choose the right moment, usually after an offer is made but before accepting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3><i class="fas fa-search"></i> Job Seeker </h3>
+                    <p>Your gateway to finding the perfect job opportunity. We connect talented professionals with top employers worldwide.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="company-review.html">Company Review</a></li>
+                        <li><a href="salary-guide.html">Salary Guide</a></li>
+                        <li><a href="employers.html">Employers/Post Job</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Career Advice</a></li>
+                        <li><a href="#">Resume Builder</a></li>
+                        <li><a href="#">Interview Tips</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Khajraho / Rewa Street, Satna City, PIN Code 485001</p>
+                    <p><i class="fas fa-phone"></i> +919651279072</p>
+                    <p><i class="fas fa-envelope"></i> humanshuagrahari@hotmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023-2027 Job Seeker. All rights reserved. | <a href="nothing">Privacy Policy</a> | <a href="nothing">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="salary-guide.js"></script>
+</body>
+</html>

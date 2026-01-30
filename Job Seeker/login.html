@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - JobFinder</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-left">
+            <div class="login-header">
+                <a href="index.html" class="logo"></a>
+                <img src="C:\Job Seeker\JobSeekerLogoHi.png" width="250px" height="150px" alt="Logo image" >  
+                <h1>Welcome Back!</h1>
+                <p>Sign in to access your account and continue your job search journey.</p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                    <input type="email" id="email" placeholder="you@example.com" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+                
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="btn-login">Sign In</button>
+                
+                <div class="divider">
+                    <span>Or continue with</span>
+                </div>
+                
+                <div class="social-login">
+                    <button type="button" class="btn-social google">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                    <button type="button" class="btn-social linkedin">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </button>
+                </div>
+                
+                <div class="signup-link">
+                    Don't have an account? <a href="#" id="signupLink">Sign up now</a>
+                </div>
+            </form>
+            
+            <form id="signupForm" class="signup-form" style="display: none;">
+                <div class="form-group">
+                    <label for="signupName"><i class="fas fa-user"></i> Full Name</label>
+                    <input type="text" id="signupName" placeholder="John Doe" required>
+                    <div class="error-message" id="nameError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupEmail"><i class="fas fa-envelope"></i> Email Address</label>
+                    <input type="email" id="signupEmail" placeholder="you@example.com" required>
+                    <div class="error-message" id="signupEmailError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupPassword"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="signupPassword" placeholder="Create a password" required>
+                    <div class="error-message" id="signupPasswordError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword"><i class="fas fa-lock"></i> Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                    <div class="error-message" id="confirmPasswordError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="userType"><i class="fas fa-briefcase"></i> I am a...</label>
+                    <select id="userType" required>
+                        <option value="">Select account type</option>
+                        <option value="jobseeker">Job Seeker</option>
+                        <option value="employer">Employer</option>
+                    </select>
+                </div>
+                
+                <div class="terms">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                
+                <button type="submit" class="btn-signup">Create Account</button>
+                
+                <div class="login-link">
+                    Already have an account? <a href="#" id="loginLink">Sign in</a>
+                </div>
+            </form>
+        </div>
+        
+        <div class="login-right">
+            <div class="login-quote">
+                <h2>"Success isn't always about greatness. It's about consistency."</h2>
+                <p>Sign in to access personalized job recommendations, save your favorite listings, and track your applications.</p>
+            </div>
+            
+            <div class="login-features">
+                <div class="feature">
+                    <i class="fas fa-bell"></i>
+                    <h3>Job Alerts</h3>
+                    <p>Get notified about new jobs matching your profile</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-save"></i>
+                    <h3>Save Jobs</h3>
+                    <p>Bookmark interesting positions for later</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Track Applications</h3>
+                    <p>Monitor the status of all your job applications</p>
+                </div>
+            </div>
+            
+            <div class="back-home">
+                <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Homepage</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
